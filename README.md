@@ -1,24 +1,24 @@
-# README
+## railsDM用サンプルサイト
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+setup:
 
-Things you may want to cover:
+```
+$ git clone xxxx
+$ cd xxx
+$ bundle install
+$ rake db:setup
+$ puma-dev link
+$ open http://railsdm-sample-project.test/
+```
 
-* Ruby version
+open:
 
-* System dependencies
+```
+$ open http://railsdm-sample-project.test/
+```
 
-* Configuration
+restart:
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+$ puma-dev -stop && open http://railsdm-sample-project.test/
+```

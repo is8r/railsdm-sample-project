@@ -1,0 +1,44 @@
+<div class="card">
+  <h2>Input</h2>
+
+  <ul class="card-buttons-horizontal">
+    <li>
+      <input type="text" class="input duration-2" placeholder=".input" data-trigger-target />
+    </li>
+  </ul>
+
+  <ul class="card-buttons-vertical is-hidden">
+    <li>
+      <a href="#" class="button" data-trigger>action</a>
+    </li>
+  </ul>
+</div>
+
+<pre class="card card-pre">
+@keyframes anim-shake {
+  $m: .3rem;
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-$m, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  75% {
+    transform: translate($m, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+.filed {
+  .field_with_errors {
+    .input {
+      animation: .2s ease-out 0s 3 anim-shake;
+    }
+  }
+}
+</pre>

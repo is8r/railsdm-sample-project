@@ -13,15 +13,12 @@
 
     <%= render partial: 'layouts/header' %>
 
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
-
-          <%= yield %>        
-        </div>
-      </div>
+    <div class="layout-login">
+      <div class="layout-login__inner">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+      </div>    
     </div>
   </body>
 </html>

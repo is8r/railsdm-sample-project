@@ -1,0 +1,45 @@
+<div class="card card-notice">
+  <h2>Notice</h2>
+  <div class="alert" data-trigger-target>
+    <ul class="dammy-lines">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+
+  <ul class="card-buttons-vertical is-hidden">
+    <li>
+      <a href="#" class="button" data-trigger>action</a>
+    </li>
+  </ul>
+</div>
+
+<pre class="card card-pre">
+@keyframes anim-notice {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(0%);
+    opacity: 1;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.notice {
+  animation: anim-notice 3s;
+}
+</pre>
