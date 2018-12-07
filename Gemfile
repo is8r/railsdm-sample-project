@@ -65,3 +65,5 @@ gem 'devise'
 gem 'font-awesome-rails'
 gem 'bootstrap'
 gem 'jquery-rails'
+
+gem "rack", ">= 2.0.6"
