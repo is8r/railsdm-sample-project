@@ -17,19 +17,17 @@
 @import 'bootstrap';
 @import 'font-awesome';
 
-@import 'styles/spuit/spuit';
 @import 'styles/config/variables';
 @import 'styles/config/mixins';
+@import 'styles/config/timing-functions';
+@import 'styles/config/utilities';
 
 @import 'styles/components/header';
 @import 'styles/components/cards';
-
-@import 'styles/pages/login';
-
-@include include-normalize;
+@import 'styles/components/layouts';
 
 //--------------------------------------------------
-//basic styles
+// basic styles
 
 html {
   font-size: 100%;
@@ -44,7 +42,7 @@ body {
 }
 
 //--------------------------------------------------
-//aimations
+// aimations
 
 // animation: anim-notice 3s;
 @keyframes anim-notice {
@@ -86,48 +84,6 @@ body {
   100% {
     transform: translate(0, 0) rotate(0deg);
   }
-}
-
-//utilities
-
-$timings: 'ease', 'linear', 'ease-in', 'ease-out', 'ease-in-out';
-@each $timing in $timings {
-  .timing-#{$timing} {
-    transition-timing-function: #{$timing} !important;
-    animation-timing-function: #{$timing} !important;
-  }
-}
-
-$timings-ex: ('ease-in-elastic': $ease-in-elastic, 'ease-out-elastic': $ease-out-elastic, 'ease-in-back': $ease-in-back, 'ease-out-back': $ease-out-back);
-@each $timing, $function in $timings-ex {
-  .timing-#{$timing} {
-    transition-timing-function: #{$function} !important;
-    animation-timing-function: #{$function} !important;
-  }
-}
-
-@for $i from 1 through 20 {
-  .duration-#{$i} {
-    transition-duration: #{$i * 0.1}s !important;
-    animation-duration: #{$i * 0.1}s !important;
-  }
-}
-
-@for $i from 1 through 100 {
-  .duration-#{$i * 10}ms {
-    transition-duration: #{$i * 10}ms !important;
-    animation-duration: #{$i * 10}ms !important;
-  }
-}
-
-@for $i from 1 through 5 {
-  .count-#{$i} {
-    animation-iteration-count: #{$i} !important;
-  }
-}
-
-.is-hidden {
-  display: none !important;
 }
 
 //--------------------------------------------------
@@ -174,11 +130,19 @@ $timings-ex: ('ease-in-elastic': $ease-in-elastic, 'ease-out-elastic': $ease-out
   }
 }
 
+.form {
+  @include override-devise-styles;
+  @include font(.875rem);
+
+  h2 {
+    @include font(1.25rem, 1, bold);
+  }
+}
 
 //--------------------------------------------------
 // animation elements
 
-.dammy-lines {
+.dammy-notice {
   position: relative;
   display: block !important;
   margin: 0;
@@ -220,8 +184,4 @@ $timings-ex: ('ease-in-elastic': $ease-in-elastic, 'ease-out-elastic': $ease-out
       width: #{$i * 10}px !important;
     }
   }
-}
-
-.run-area {
-  position: relative;
 }

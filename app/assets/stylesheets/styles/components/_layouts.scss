@@ -1,0 +1,16 @@
+.layout-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+
+  &__inner {
+    padding: 2rem 2rem 2rem;
+    border-radius: .2rem;
+    width: 400px;
+    background-color: #fff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .05);
+  }
+}

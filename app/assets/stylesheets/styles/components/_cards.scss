@@ -24,14 +24,14 @@
   min-height: 210px;
   overflow: hidden;
   
-  .alert {
+  .notice {
     position: absolute;
     padding: 2rem;
     background-color: #fff;
     animation: none;
   }
 
-  .alert {
+  .notice {
     &.is-action {
       animation: anim-notice 3s;
     }
@@ -44,7 +44,7 @@
   color: #444;
   padding: 1.5rem;
   border-radius: 0;
-  font-family: $font-code;
+  font-family: 'Courier New', Courier, monospace;
   font-size: .875rem;
 }
 

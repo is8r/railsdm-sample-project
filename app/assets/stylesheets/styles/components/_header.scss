@@ -4,6 +4,11 @@
   align-items: flex-start;
   align-content: flex-start;
   border-bottom: 1px solid #eee;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
 
   a {
     @include font(.875rem);

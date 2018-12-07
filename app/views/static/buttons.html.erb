@@ -12,35 +12,3 @@
   transition: all 0.2s ease-out;
 }
 </pre>
-
-<pre class="card card-pre">
-// その他のデザイン部分のスタイル
-
-.button {
-  $c: $color-blue;
-  $t: .2rem;
-  box-sizing: border-box;
-  display: inline-block;
-  background-image: linear-gradient(to top, transparent, transparent);
-  position: relative;
-  cursor: pointer;
-  text-align: center;
-  margin: 0;
-  border: none;
-  outline: none;
-  background-color: $c;
-  color: #fff;
-  padding: .5rem 2rem;
-  border-radius: 4rem;
-  transform: translateY(-$t);
-  box-shadow: 0 $t 0 darken($c, 5%);
-
-  &:hover {
-    color: #fff;
-    text-decoration: none;
-    transform: translateY(0);
-    box-shadow: 0 0 0 $c;
-    background-color: darken($c, 2%);
-  }
-}
-</pre>
