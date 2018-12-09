@@ -1,0 +1,187 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ * require_tree .
+ * require_self
+ */
+
+@import 'bootstrap';
+@import 'font-awesome';
+
+@import 'styles/config/variables';
+@import 'styles/config/mixins';
+@import 'styles/config/timing-functions';
+@import 'styles/config/utilities';
+
+@import 'styles/components/header';
+@import 'styles/components/cards';
+@import 'styles/components/layouts';
+
+//--------------------------------------------------
+// basic styles
+
+html {
+  font-size: 100%;
+  @include breakpoint-down(md) {
+    font-size: 80%;
+  }
+}
+
+body {
+  @include font(1rem);
+  color: $color-black;
+}
+
+//--------------------------------------------------
+// aimations
+
+// animation: anim-notice 3s;
+@keyframes anim-notice {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(0%);
+    opacity: 1;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+// animation: anim-shake .2s linear 4;
+@keyframes anim-shake {
+  $m: .3rem;
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-$m, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  75% {
+    transform: translate($m, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+//--------------------------------------------------
+// components
+
+.notice {
+  @include font(.875rem);
+  @include notice-base;
+  animation: anim-notice 3s;
+}
+
+.alert {
+  @include font(.875rem);
+  @include notice-base($color-red);
+  animation: anim-notice 3s;
+}
+
+.button {
+  @include font(.9375rem);
+  @include button-base;
+
+  transition: all 0.2s ease-out;
+}
+
+.button.is-bold {
+  @include font(.9375rem);
+  @include button-base($color-blue, .5rem);
+
+  transition: all 0.2s ease-out;
+}
+
+.input {
+  @include font(.9375rem);
+  @include input-base();
+
+  &.is-action {
+    $c: $color-red;
+    animation: anim-shake .2s linear 4;
+
+    border-color: $c;
+    &:focus {
+      border-color: $c;
+    }
+  }
+}
+
+.form {
+  @include override-devise-styles;
+  @include font(.875rem);
+
+  h2 {
+    @include font(1.25rem, 1, bold);
+  }
+}
+
+//--------------------------------------------------
+// animation elements
+
+.dammy-notice {
+  position: relative;
+  display: block !important;
+  margin: 0;
+  padding: 0;
+
+  > li {
+    display: block;
+    height: 10px;
+    width: 100%;
+    margin-top: .8rem;
+    padding: 0 !important;
+    background-color: lighten($color-blue, 28%);
+
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      width: 80%;
+    }
+  }
+}
+
+.car,
+.animal {
+  width: 100px;
+  height: auto;
+  transition: margin-left 1s ease-out;
+  margin-left: 0%;
+
+  &.go {
+    margin-left: calc(100% - 100px);
+    transform: scaleX(-1);
+  }
+}
+
+.animal {
+  @for $i from 1 through 20 {
+    &.size-#{$i * 10} {
+      width: #{$i * 10}px !important;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+$timings: 'ease', 'linear', 'ease-in', 'ease-out', 'ease-in-out';
+@each $timing in $timings {
+  .timing-#{$timing} {
+    transition-timing-function: #{$timing} !important;
+    animation-timing-function: #{$timing} !important;
+  }
+}
+
+$timings-ex: ('ease-in-elastic': $ease-in-elastic, 'ease-out-elastic': $ease-out-elastic, 'ease-in-back': $ease-in-back, 'ease-out-back': $ease-out-back);
+@each $timing, $function in $timings-ex {
+  .timing-#{$timing} {
+    transition-timing-function: #{$function} !important;
+    animation-timing-function: #{$function} !important;
+  }
+}
+
+@for $i from 1 through 20 {
+  .duration-#{$i} {
+    transition-duration: #{$i * 0.1}s !important;
+    animation-duration: #{$i * 0.1}s !important;
+  }
+}
+
+@for $i from 1 through 100 {
+  .duration-#{$i * 10}ms {
+    transition-duration: #{$i * 10}ms !important;
+    animation-duration: #{$i * 10}ms !important;
+  }
+}
+
+@for $i from 1 through 5 {
+  .count-#{$i} {
+    animation-iteration-count: #{$i} !important;
+  }
+}
+
+.is-hidden {
+  display: none !important;
+}

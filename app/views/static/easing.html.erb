@@ -1,0 +1,146 @@
+<div class="card">
+  <h2>Easing functions</h2>
+  <ul class="card-buttons-car">
+    <li>
+      <div>
+        <a href="#" class="button is-bold" data-toggler-run="go">ease (default)</a>
+      </div>
+      <div class="position-relative">
+        <%= image_tag 'car_yellow.png', class: 'car duration-10 timing-ease' %>
+      </div>
+    </li>
+    <li>
+      <div>
+        <a href="#" class="button is-bold" data-toggler-run="go">linear</a>
+      </div>
+      <div class="position-relative">
+        <%= image_tag 'car_yellow.png', class: 'car duration-10 timing-linear' %>
+      </div>
+    </li>
+    <li>
+      <div>
+        <a href="#" class="button is-bold" data-toggler-run="go">ease-in</a>
+      </div>
+      <div class="position-relative">
+        <%= image_tag 'car_yellow.png', class: 'car duration-10 timing-ease-in' %>
+      </div>
+    </li>
+    <li>
+      <div>
+        <a href="#" class="button is-bold" data-toggler-run="go">ease-out</a>
+      </div>
+      <div class="position-relative">
+        <%= image_tag 'car_yellow.png', class: 'car duration-10 timing-ease-out' %>
+      </div>
+    </li>
+    <li>
+      <div>
+        <a href="#" class="button is-bold" data-toggler-run="go">ease-in-out</a>
+      </div>
+      <div class="position-relative">
+        <%= image_tag 'car_yellow.png', class: 'car duration-10 timing-ease-in-out' %>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+<div class="card">
+  <h2>with cubic-bezier</h2>
+  <ul class="card-buttons-car">
+    <li>
+      <div>
+        <a href="#" class="button is-bold" data-toggler-run="go">ease-in-elastic</a>
+      </div>
+      <div class="position-relative">
+        <%= image_tag 'car_yellow.png', class: 'car duration-20 timing-ease-in-elastic' %>
+      </div>
+    </li>
+    <li>
+      <div>
+        <a href="#" class="button is-bold" data-toggler-run="go">ease-out-elastic</a>
+      </div>
+      <div class="position-relative">
+        <%= image_tag 'car_yellow.png', class: 'car duration-20 timing-ease-out-elastic' %>
+      </div>
+    </li>
+    <li>
+      <div>
+        <a href="#" class="button is-bold" data-toggler-run="go">ease-in-back</a>
+      </div>
+      <div class="position-relative">
+        <%= image_tag 'car_yellow.png', class: 'car duration-20 timing-ease-in-back' %>
+      </div>
+    </li>
+    <li>
+      <div>
+        <a href="#" class="button is-bold" data-toggler-run="go">ease-out-back</a>
+      </div>
+      <div class="position-relative">
+        <%= image_tag 'car_yellow.png', class: 'car duration-20 timing-ease-out-back' %>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Button / Easing</h2>
+  <ul class="card-buttons-horizontal">
+    <li>
+      <a href="#" class="button is-bold duration-10 timing-ease" data-hover>ease</a>
+    </li>
+    <li>
+      <a href="#" class="button is-bold duration-10 timing-linear" data-hover>linear</a>
+    </li>
+    <li>
+      <a href="#" class="button is-bold duration-10 timing-ease-in" data-hover>ease-in</a>
+    </li>
+    <li>
+      <a href="#" class="button is-bold duration-10 timing-ease-out" data-hover>timing-ease-out</a>
+    </li>
+    <li>
+      <a href="#" class="button is-bold duration-10 timing-ease-in-out" data-hover>ease-in-out</a>
+    </li>
+  </ul>
+</div>
+
+<pre class="card card-pre">
+// from: https://github.com/thoughtbot/bourbon/blob/master/core/bourbon/library/_timing-functions.scss
+
+// EASE IN
+$ease-in-quad:      cubic-bezier(0.550,  0.085, 0.680, 0.530);
+$ease-in-cubic:     cubic-bezier(0.550,  0.055, 0.675, 0.190);
+$ease-in-quart:     cubic-bezier(0.895,  0.030, 0.685, 0.220);
+$ease-in-quint:     cubic-bezier(0.755,  0.050, 0.855, 0.060);
+$ease-in-sine:      cubic-bezier(0.470,  0.000, 0.745, 0.715);
+$ease-in-expo:      cubic-bezier(0.950,  0.050, 0.795, 0.035);
+$ease-in-circ:      cubic-bezier(0.600,  0.040, 0.980, 0.335);
+$ease-in-back:      cubic-bezier(0.600, -0.280, 0.735, 0.045);
+
+// EASE OUT
+$ease-out-quad:     cubic-bezier(0.250,  0.460, 0.450, 0.940);
+$ease-out-cubic:    cubic-bezier(0.215,  0.610, 0.355, 1.000);
+$ease-out-quart:    cubic-bezier(0.165,  0.840, 0.440, 1.000);
+$ease-out-quint:    cubic-bezier(0.230,  1.000, 0.320, 1.000);
+$ease-out-sine:     cubic-bezier(0.390,  0.575, 0.565, 1.000);
+$ease-out-expo:     cubic-bezier(0.190,  1.000, 0.220, 1.000);
+$ease-out-circ:     cubic-bezier(0.075,  0.820, 0.165, 1.000);
+$ease-out-back:     cubic-bezier(0.175,  0.885, 0.320, 1.275);
+
+// EASE IN OUT
+$ease-in-out-quad:  cubic-bezier(0.455,  0.030, 0.515, 0.955);
+$ease-in-out-cubic: cubic-bezier(0.645,  0.045, 0.355, 1.000);
+$ease-in-out-quart: cubic-bezier(0.770,  0.000, 0.175, 1.000);
+$ease-in-out-quint: cubic-bezier(0.860,  0.000, 0.070, 1.000);
+$ease-in-out-sine:  cubic-bezier(0.445,  0.050, 0.550, 0.950);
+$ease-in-out-expo:  cubic-bezier(1.000,  0.000, 0.000, 1.000);
+$ease-in-out-circ:  cubic-bezier(0.785,  0.135, 0.150, 0.860);
+$ease-in-out-back:  cubic-bezier(0.680, -0.550, 0.265, 1.550);
+</pre>
+
+
+<pre class="card card-pre">
+// (similar elastic).
+$ease-out-elastic: cubic-bezier(0.370, 1.650, 0.410, 0.780);
+$ease-in-elastic: cubic-bezier(0.370, 0.650, 0.410, -0.780);
+</pre>

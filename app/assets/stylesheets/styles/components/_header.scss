@@ -1,0 +1,41 @@
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  border-bottom: 1px solid #eee;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+
+  a {
+    @include font(.875rem);
+    display: inline-block;
+    padding: .5rem;
+    color: $color-black;
+    text-decoration: none;
+
+    &:hover {
+      background-color: lighten($color-blue, 30%);
+    }
+
+    &.is-current {
+      border-bottom: 1px solid $color-blue;
+    }
+  }
+
+  &__links {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    padding: 0 .5rem;
+    border-right: 1px solid #eee;
+
+    &:first-child {
+      border-left: 1px solid #eee;
+    }
+  }
+}

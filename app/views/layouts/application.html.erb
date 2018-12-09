@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsdmSampleProject</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body data-controller="<%= controller.controller_path %>" data-action="<%= controller.action_name %>">
+
+    <%= render partial: 'layouts/header' %>
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+
+          <div class="mt-5">
+            <%= yield %>        
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
