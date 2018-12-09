@@ -139,6 +139,19 @@ body {
   }
 }
 
+.copy {
+  text-align: right;
+
+  a {
+    text-decoration: underline;
+    color: $color-black;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
 //--------------------------------------------------
 // animation elements
 
